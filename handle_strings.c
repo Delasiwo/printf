@@ -1,14 +1,14 @@
 #include "main.h"
 /**
  * handle_strings - Prints an argument based on its type
- * @fmt: Formatted string to print the arguments.
- * @list: List of printed arguments.
-* @ind: ind.
- * @buffer: Handle print of buffer array.
- * @flags: Active flags to be calculated
+ * @fmt: Formatted string in which to print the arguments.
+ * @list: List of arguments to be printed.
+ * @ind: ind.
+ * @buffer: Buffer array to handle print.
+ * @flags: Calculates active flags
  * @width: get width.
- * @precision: specification of precision
- * @size: specifier of size
+ * @precision: Precision specification
+ * @size: Size specifier
  * Return: 1 or 2;
  */
 int handle_strings(const char *fmt, int *ind, va_list list, char buffer[],
@@ -35,7 +35,7 @@ int handle_strings(const char *fmt, int *ind, va_list list, char buffer[],
 			unknow_len += write(1, " ", 1);
 		else if (width)
 		{
---(*ind);
+			--(*ind);
 			while (fmt[*ind] != ' ' && fmt[*ind] != '%')
 				--(*ind);
 			if (fmt[*ind] == ' ')
