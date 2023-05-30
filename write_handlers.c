@@ -1,4 +1,5 @@
 #include "main.h"
+
 /************************* WRITE HANDLE *************************/
 /**
  * handle_write_char - Prints a string
@@ -16,6 +17,7 @@ int handle_write_char(char c, char buffer[],
 { /* char is stored at left and paddind at buffer's right */
 	int i = 0;
 	char padd = ' ';
+
 	UNUSED(precision);
 	UNUSED(size);
 
@@ -49,7 +51,7 @@ int handle_write_char(char c, char buffer[],
  * @ind: char types.
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
-* @width: get width.
+ * @width: get width.
  * @precision: precision specifier
  * @size: Size specifier
  *
@@ -87,7 +89,7 @@ int write_number(int is_negative, int ind, char buffer[],
  * @padd: Pading char
  * @extra_c: Extra char
  *
-* Return: Number of printed chars.
+ * Return: Number of printed chars.
  */
 int write_num(int ind, char buffer[],
 	int flags, int width, int prec,
@@ -152,7 +154,7 @@ int write_unsgnd(int is_negative, int ind,
 	int flags, int width, int precision, int size)
 {
 	/* The number is stored at the bufer's right and starts at position i */
-int length = BUFF_SIZE - ind - 1, i = 0;
+	int length = BUFF_SIZE - ind - 1, i = 0;
 	char padd = ' ';
 
 	UNUSED(is_negative);
@@ -248,4 +250,3 @@ int write_pointer(char buffer[], int ind, int length,
 		buffer[--ind] = extra_c;
 	return (write(1, &buffer[ind], BUFF_SIZE - ind - 1));
 }
-
