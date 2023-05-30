@@ -5,10 +5,10 @@
  * @list: List of arguments to be printed.
  * @ind: ind.
  * @buffer: Buffer array to handle print.
- * @flags: Calculates active flags
+ * @flags: Active flags to be calculated
  * @width: get width.
- * @precision: Precision specification
- * @size: Size specifier
+ * @precision:  Specification precision
+ * @size: Specifier size
  * Return: 1 or 2;
  */
 int handle_strings(const char *fmt, int *ind, va_list list, char buffer[],
@@ -33,7 +33,7 @@ int handle_strings(const char *fmt, int *ind, va_list list, char buffer[],
 		unknow_len += write(1, "%%", 1);
 		if (fmt[*ind - 1] == ' ')
 			unknow_len += write(1, " ", 1);
-		else if (width);
+		else if (width)
 		{
 			--(*ind);
 			while (fmt[*ind] != ' ' && fmt[*ind] != '%')
